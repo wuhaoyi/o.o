@@ -1,0 +1,65 @@
+package 红包;
+
+import java.util.*;
+
+public class HelloWorld {
+
+	
+	public static void main(String[] args) {
+		System.out.println("请分别输入总金额和红包个数:");
+		int x ;
+		float money;
+		//float a[] = new float[x];
+		
+        Scanner sc = new Scanner(System.in);
+        
+       while(true){  
+		  money = sc.nextFloat();
+          //money = sc.nextInt();
+          x = sc.nextInt();
+		  if(money!=(float)(Math.round(money*100))/100)
+			  System.out.print("请重新输入: "); 
+		  else break;
+        }
+    
+       
+		int i,j=0,k=0,b=0;
+		float d=0,e=0;
+		int a[] = new int[x];
+		int f[] = new int[x];
+		float c[] = new float[x];
+		
+		for(i=0;i<x;i++){
+		  a[i]=1+(int)(Math.random()*50);
+		  f[i]=a[i];
+		 // System.out.println("第"+(i+1)+"个随机数为"+a[i]);
+		  b=a[i]+b;}
+		for(i=0;i<x;i++){
+			if (f[i]>j){
+			  j=f[i];
+			  k=i;}
+		}
+		for(i=0;i<x;i++){
+		  //c[i]=a[i]/b*money;
+			c[i]=(float)a[i]/(float)b*money; //两个int整数相除得到小数
+			//System.out.println("第"+(i+1)+"个百分比为"+c[i]);
+		    c[i]=(float)(Math.round(c[i]*100))/100;
+		  
+		  d=c[i]+d;}
+		 
+		if(d!=money){
+			for(i=1;i<x;i++)
+				e=c[i]+e;
+		    c[0] = money - e;
+		    c[0]=(float)(Math.round(c[0]*100))/100;
+			} //防止小数取舍后造成红包金额总和不等于原金额的情况
+		
+		for(i=0;i<x;i++){
+		System.out.println("第"+(i+1)+"个红包金额为"+c[i]);
+		}
+		System.out.println("第"+(k+1)+"个人是运气王");
+		//System.out.println(b);
+		System.out.println("***********************");
+		System.out.println("why制作  第一个java程序");
+	}
+}
